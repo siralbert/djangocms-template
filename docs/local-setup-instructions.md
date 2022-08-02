@@ -28,19 +28,20 @@ For installing the compiled requirements in docker you have to rebuild it with `
 
 This setup is useful when execution performance is important and you don't want to use Docker for the backend and frontend, only for DB.
 Using of virtualenv (and other [tools](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html)) is very useful here, you might want to run something like this to prepare your local environment:
-
-- `sudo apt-get update`
-- `sudo apt-get install python3-pip`
-- `sudo -H pip3 install --upgrade pip`
-- `sudo -H pip3 install virtualenv virtualenvwrapper`
-- `echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc`
-- `echo "export WORKON_HOME=~/Env" >> ~/.bashrc`
-- `echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc`
-- `source ~/.bashrc`
-- `mkvirtualenv djangocms-template`
-- `sudo apt install libpq-dev postgresql-doc-11`
-- `pip install -r backend/requirements.txt`
-- `sudo apt install docker-compose`
+ ```
+ sudo apt-get update -y
+ sudo apt-get install python3-pip -y
+ sudo -H pip3 install --upgrade pip
+ sudo -H pip3 install virtualenv virtualenvwrapper
+ echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
+ echo "export WORKON_HOME=~/Env" >> ~/.bashrc
+ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+ source ~/.bashrc
+ mkvirtualenv djangocms-template
+ sudo apt install libpq-dev postgresql-doc-11
+ pip install -r backend/requirements.txt
+ sudo apt install docker-compose -y
+ ```
 
 1. Start DB via docker-compose: `docker-compose up db` 
 2. Enable reading local env file to **settings.py**: `environ.Env.read_env(os.path.join(BASE_DIR, '.local-env'))` 
