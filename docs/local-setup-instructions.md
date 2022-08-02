@@ -29,9 +29,15 @@ For installing the compiled requirements in docker you have to rebuild it with `
 This setup is useful when execution performance is important and you don't want to use Docker for the backend and frontend, only for DB.
 Using of virtualenv (and other [tools](https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html)) is very useful here, you might want to run something like this to prepare your local environment:
 
-- `virtualenv djangocms-template --python=python3.9`
-- `cd djangocms-template`
-- `source bin/activate`
+- `sudo apt-get update`
+- `sudo apt-get install python3-pip`
+- `sudo -H pip3 install --upgrade pip`
+- `sudo -H pip3 install virtualenv virtualenvwrapper`
+- `echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc`
+- `echo "export WORKON_HOME=~/Env" >> ~/.bashrc`
+- `echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc`
+- `source ~/.bashrc`
+- `mkvirtualenv djangocms-template`
 - `sudo apt install libpq-dev postgresql-doc-11`
 - `pip install -r backend/requirements.txt`
 - `sudo apt install docker-compose`
