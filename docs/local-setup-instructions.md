@@ -44,7 +44,7 @@ Using of virtualenv (and other [tools](https://virtualenvwrapper.readthedocs.io/
  ```
 
 1. Start DB via docker-compose: `docker-compose up db` 
-2. Enable reading local env file to **settings.py**: `environ.Env.read_env(os.path.join(BASE_DIR, '.local-env'))` 
+2. Uncomment `environ.Env.read_env(os.path.join(BASE_DIR, '.local-env'))` in **.\backend\settings.py**  
 3. Run the backend: `python manage.py runserver`
 4. Run the frontend: 
    1. `cd frontend`
