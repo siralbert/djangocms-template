@@ -39,7 +39,7 @@ Using of virtualenv (and other [tools](https://virtualenvwrapper.readthedocs.io/
  source ~/.bashrc
  mkvirtualenv djangocms-template
  sudo apt install libpq-dev postgresql-doc-11
- pip install -r backend/requirements.txt
+ pip3 install -r backend/requirements.txt
  sudo apt install docker-compose -y
  ```
 
